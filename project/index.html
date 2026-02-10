@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>अमृतdhara | Every Drop Counts</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap');
+    </style>
+    <style>
+        /* Custom Styles from your original code */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0A0A;
+            color: #F5F5F5;
+        }
+        .dhara{
+             font-family: "Inknut Antiqua", serif,bold;
+            font-weight: 800;
+            font-style: normal;
+            font:bold ;
+            color:#F4C430 ;
+        }
+
+        .dh{
+             font-family: "Inknut Antiqua", serif,bold;
+            font-weight: 800;
+            font-style: normal;
+            font:bold ;
+            color:white;
+        }
+        .ara{
+             font-family: "Inknut Antiqua", serif,bold;
+            font-weight: 800;
+            font-style: normal;
+            font:bold ;
+            color:#19fc04 ;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-bg {
+            background: linear-gradient(-45deg, #082f49, #1e3a8a, #3b82f6, #06b6d4);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #60a5fa; }
+
+        /* Water drop animations for hero section */
+        .droplet {
+            position: absolute;
+            bottom: -50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: rise 10s infinite linear;
+            z-index: 1;
+        }
+        @keyframes rise {
+            0% { transform: translateY(0); opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+        
+        /* SVG Icon Animations */
+        @keyframes drip {
+            0%, 100% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(10px); opacity: 0; }
+        }
+        .drip-animate { animation: drip 2s ease-in-out infinite; }
+
+        @keyframes sprinkle {
+            0%, 100% { transform: translateX(5px) rotate(5deg); }
+            50% { transform: translateX(-5px) rotate(-5deg); }
+        }
+        .sprinkle-animate { animation: sprinkle 3s ease-in-out infinite; }
+
+        @keyframes community {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .community-animate { animation: community 4s ease-in-out infinite; }
+
+        /* Style for quote transition */
+        #daily-quote-container {
+            transition: opacity 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-sm">
+        <nav class="w-full px-2 py-4 flex justify-between items-center">
+            <a href="#home" class="dhara text-3xl font-bold">
+                अमृत<span class="dh">dh</span><span class="ara">ara</span>
+            </a>
+                        <div class="hidden md:flex items-center space-x-8">
+                <a href="#crisis" class="text-gray-300 hover:text-white transition-colors duration-300">THE CRISIS</a>
+                <a href="#mission" class="text-gray-300 hover:text-white transition-colors duration-300">OUR MISSION</a>
+                <a href="#ai-tips" class="text-gray-300 hover:text-white transition-colors duration-300">AI TIPS</a>
+                <a href="#myth-buster" class="text-gray-300 hover:text-white transition-colors duration-300">MYTH BUSTER</a>
+                <a href="#reviews" class="text-gray-300 hover:text-white transition-colors duration-300">REVIEWS</a>
+                <a href="#action" class="text-gray-300 hover:text-white transition-colors duration-300">TAKE ACTION</a>
+            </div>
+            <a href="#action" class="hidden md:block bg-blue-600 hover:bg-blue-500 text-white font-semibold px-5 py-2 rounded-full transition-colors duration-300">
+                GET INVOLVED
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/80">
+            <a href="#crisis" class="block py-2 px-6 text-gray-300 hover:bg-blue-600 hover:text-white">THE CRISIS</a>
+            <a href="#mission" class="block py-2 px-6 text-gray-300 hover:bg-blue-600 hover:text-white">OUR MISSION</a>
+            <a href="#ai-tips" class="block py-2 px-6 text-gray-300 hover:bg-blue-600 hover:text-white">AI TIPS</a>
+            <a href="#myth-buster" class="block py-2 px-6 text-gray-300 hover:bg-blue-600 hover:text-white">MYTH BUSTER</a>
+            <a href="#reviews" class="block py-2 px-6 text-gray-300 hover:bg-blue-600 hover:text-white">REVIEWS</a>
+            <a href="#action" class="block py-2 px-6 text-gray-300 hover:bg-blue-600 hover:text-white">TAKE ACTION</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="h-screen w-full flex flex-col justify-center items-center relative overflow-hidden hero-bg">
+            <div id="droplet-container"></div>
+            <div class="text-center z-10 px-4">
+                <h1 id="hero-headline" class="text-5xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter">
+                    <span class="inline-block opacity-0 translate-y-8">Every</span>
+                    <span class="inline-block opacity-0 translate-y-8">Drop</span>
+                    <span class="inline-block opacity-0 translate-y-8">Counts</span>
+                </h1>
+                <p id="hero-subheadline" class="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto opacity-0 translate-y-4">
+                    Join a movement to protect our most precious resource. Your actions, big or small, can turn the tide.
+                </p>
+                
+                <!-- Daily Motivational Quote Section -->
+                <div id="daily-quote-container" class="mt-8 max-w-2xl mx-auto opacity-0">
+                    <!-- Quote will be injected here by JavaScript -->
+                </div>
+
+                <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <div id="magnetic-button-container" class="opacity-0 translate-y-4">
+                        <a href="#mission" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-full text-lg font-bold shadow-lg shadow-blue-500/20 transform hover:scale-105 transition-all duration-300">
+                            <span>Learn How to Help</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <div id="chatbot-button-container" class="opacity-0 translate-y-4" style="transition-delay: 150ms;">
+                        <a href="http://127.0.0.1:5000" target="_blank" rel="noopener noreferrer" class="glass-card inline-flex items-center gap-2 px-8 py-4 text-white rounded-full text-lg font-bold transform hover:scale-105 transition-all duration-300 border-2 border-white/20 hover:bg-white/10">
+                            <span>Launch Chatbot</span>
+                            <i data-lucide="bot" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a href="#crisis" class="absolute bottom-10 z-10 text-white animate-bounce">
+                <i data-lucide="arrow-down" class="w-8 h-8"></i>
+            </a>
+        </section>
+
+        <!-- The Crisis Section -->
+        <section id="crisis" class="py-20 md:py-32 fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-5 gap-12 items-center">
+                    <div class="md:col-span-2">
+                        <img src="Water scarcity.jpeg" alt="Dried riverbed representing water scarcity" class="rounded-lg object-cover w-full h-auto shadow-2xl shadow-blue-900/50">
+                    </div>
+                    <div class="md:col-span-3">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">THE INDIAN WATER CRISIS</h2>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            India is facing one of the world's most severe water crises, with millions of lives and livelihoods at risk. Over-extraction of groundwater, pollution of our rivers, and the unpredictable impacts of climate change are threatening our nation's future. The challenge is immense, but understanding the problem is the first step towards solving it.
+                        </p>
+                        <h3 class="text-2xl font-semibold mb-4">Key Facts</h3>
+                        <div class="flex flex-wrap gap-3" id="key-facts-container">
+                            <span class="fact-tag bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm font-medium opacity-0">600 Million Indians Face High Water Stress</span>
+                            <span class="fact-tag bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm font-medium opacity-0">Demand May Exceed Supply by 2x by 2030</span>
+                            <span class="fact-tag bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm font-medium opacity-0">Nearly 70% of Our Water is Contaminated</span>
+                            <span class="fact-tag bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm font-medium opacity-0">Agriculture Consumes ~80% of Freshwater</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Mission Section -->
+        <section id="mission" class="py-20 md:py-32 bg-black/20 fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Simple Steps, Powerful Impact</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Tip Card 1 with Animated SVG -->
+                    <div class="glass-card rounded-2xl overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-full h-48 flex items-center justify-center p-4">
+                            <svg viewBox="0 0 100 100" class="w-28 h-28">
+                                <path d="M40,30 Q50,10 60,30 T80,30" stroke="#9ca3af" stroke-width="2" fill="none"/>
+                                <path d="M45,30 Q50,50 55,30" stroke="#9ca3af" stroke-width="2" fill="none"/>
+                                <path class="drip-animate" d="M50,55 Q50,65 50,65 Q45,60 50,55 Z" fill="#3b82f6"/>
+                                <rect x="48" y="65" width="4" height="10" fill="#f87171" class="wrench" style="transition: transform 0.3s; transform-origin: center;"/>
+                                <rect x="42" y="62" width="16" height="4" fill="#f87171" class="wrench-head" style="transition: transform 0.3s; transform-origin: center;"/>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">At Home</h3>
+                            <p class="text-gray-400 text-sm mb-4">Simple acts like fixing a dripping tap can save over 10,000 litres a year. Take 5-minute showers and turn off the tap while brushing to make a huge daily impact.</p>
+                            <div class="flex space-x-2">
+                                <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full">Indoors</span>
+                                <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full">Daily Habits</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tip Card 2 with Animated SVG -->
+                    <div class="glass-card rounded-2xl overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 150ms;">
+                        <div class="w-full h-48 flex items-center justify-center p-4">
+                            <svg viewBox="0 0 100 100" class="w-32 h-32 sprinkle-animate">
+                                <path d="M20 80 Q50 70 80 80" stroke="#22c55e" stroke-width="4" fill="none" stroke-linecap="round"/>
+                                <path d="M30,70 Q50,50 70,70" stroke="#16a34a" stroke-width="3" fill="none" stroke-linecap="round"/>
+                                <path d="M40 60 Q50 40 60 60" stroke="#15803d" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                <circle cx="30" cy="40" r="3" fill="#3b82f6" opacity="0.8" class="drip-animate" style="animation-delay: 0.1s;"/>
+                                <circle cx="50" cy="30" r="4" fill="#3b82f6" opacity="0.9" class="drip-animate" style="animation-delay: 0.5s;"/>
+                                <circle cx="70" cy="40" r="3.5" fill="#3b82f6" opacity="0.85" class="drip-animate" style="animation-delay: 0.3s;"/>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">In Your Garden</h3>
+                            <p class="text-gray-400 text-sm mb-4">Water plants during the cooler hours of the day to reduce evaporation. Consider rainwater harvesting—a simple and effective way to conserve for outdoor use.</p>
+                             <div class="flex space-x-2">
+                                <span class="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded-full">Gardening</span>
+                                <span class="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded-full">Outdoors</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tip Card 3 with Animated SVG -->
+                    <div class="glass-card rounded-2xl overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 300ms;">
+                        <div class="w-full h-48 flex items-center justify-center p-4">
+                            <svg viewBox="0 0 100 100" class="w-28 h-28 community-animate">
+                                <circle cx="50" cy="35" r="10" fill="#a78bfa"/>
+                                <path d="M35 70 Q50 50 65 70" fill="#a78bfa" stroke="#a78bfa" stroke-width="2"/>
+                                <circle cx="30" cy="45" r="8" fill="#c4b5fd"/>
+                                <path d="M18 75 Q30 60 42 75" fill="#c4b5fd" stroke="#c4b5fd" stroke-width="2"/>
+                                <circle cx="70" cy="45" r="8" fill="#c4b5fd"/>
+                                <path d="M58 75 Q70 60 82 75" fill="#c4b5fd" stroke="#c4b5fd" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">In Your Community</h3>
+                            <p class="text-gray-400 text-sm mb-4">Your voice is powerful. Educate your community, report public water wastage using local civic apps, and support policies for sustainable water management.</p>
+                             <div class="flex space-x-2">
+                                <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded-full">Advocacy</span>
+                                <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded-full">Community</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI-Powered Tips Section -->
+        <section id="ai-tips" class="py-20 md:py-32 fade-in-section">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">✨ Get Your Personalized Water-Saving Plan</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mb-8">
+                    Tell our AI assistant about your home or specific needs (e.g., "tips for a small apartment" or "how to save water in the garden"), and get a custom plan.
+                </p>
+                <div class="max-w-xl mx-auto">
+                    <div class="flex items-center gap-3 bg-white/5 p-2 rounded-full border border-white/10">
+                        <input type="text" id="ai-prompt-input" placeholder="e.g., Tips for my kitchen..." class="flex-1 w-full bg-transparent text-white px-4 py-2 focus:outline-none placeholder-gray-500">
+                        <button id="generate-tips-btn" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
+                            Generate Tips
+                        </button>
+                    </div>
+                </div>
+                <div id="ai-results-container" class="mt-12 max-w-2xl mx-auto text-left"></div>
+            </div>
+        </section>
+        
+        <!-- AI-Powered Myth Buster Section -->
+        <section id="myth-buster" class="py-20 md:py-32 bg-black/20 fade-in-section">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">✨ AI-Powered Myth Buster</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mb-8">
+                    Heard a tip about saving water and not sure if it's true? Let our AI verify it for you.
+                </p>
+                <div class="max-w-xl mx-auto">
+                    <div class="flex items-center gap-3 bg-white/5 p-2 rounded-full border border-white/10">
+                        <input type="text" id="myth-prompt-input" placeholder="e.g., Is taking a bath better than a shower?" class="flex-1 w-full bg-transparent text-white px-4 py-2 focus:outline-none placeholder-gray-500">
+                        <button id="bust-myth-btn" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
+                            Fact or Myth?
+                        </button>
+                    </div>
+                </div>
+                <div id="myth-results-container" class="mt-12 max-w-2xl mx-auto text-left"></div>
+            </div>
+        </section>
+
+        <!-- Reviews & Feedback Section -->
+        <section id="reviews" class="py-20 md:py-32 fade-in-section">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12">Reviews & Feedback</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Review Card 1 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/80x80/c4b5fd/1e1b4b?text=A" alt="User Avatar" class="w-20 h-20 rounded-full mb-4 border-2 border-indigo-400">
+                        <h3 class="font-bold text-lg">Anjali S.</h3>
+                        <p class="text-sm text-gray-400 mb-2">Lucknow, India</p>
+                        <div class="flex text-yellow-400 mb-4">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                        <p class="text-gray-300 italic">"The AI tips for my high-rise apartment in Lucknow were surprisingly specific and helpful! This site makes conservation accessible."</p>
+                    </div>
+
+                    <!-- Review Card 2 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 150ms;">
+                        <img src="https://placehold.co/80x80/60a5fa/0c4a6e?text=R" alt="User Avatar" class="w-20 h-20 rounded-full mb-4 border-2 border-blue-400">
+                        <h3 class="font-bold text-lg">Rohan M.</h3>
+                        <p class="text-sm text-gray-400 mb-2">Mumbai, India</p>
+                        <div class="flex text-yellow-400 mb-4">
+                           <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                           <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                           <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                           <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                           <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                        <p class="text-gray-300 italic">"I always thought 'greywater' was complicated. The Myth Buster explained it simply. A great tool for breaking down complex topics."</p>
+                    </div>
+
+                    <!-- Review Card 3 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 300ms;">
+                        <img src="https://placehold.co/80x80/f472b6/831843?text=P" alt="User Avatar" class="w-20 h-20 rounded-full mb-4 border-2 border-pink-400">
+                        <h3 class="font-bold text-lg">Priya K.</h3>
+                        <p class="text-sm text-gray-400 mb-2">Bangalore, India</p>
+                        <div class="flex text-yellow-400 mb-4">
+                           <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                           <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                           <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                           <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                           <i data-lucide="star-half" class="w-5 h-5 fill-current"></i>
+                        </div>
+                        <p class="text-gray-300 italic">"As a student in Bangalore, a city facing water issues, this site is a vital resource. It's informative and beautifully designed."</p>
+                    </div>
+                </div>
+
+                <!-- Private Feedback Form -->
+                <div class="max-w-2xl mx-auto mt-20">
+                    <h3 class="text-2xl font-bold mb-4">Leave Your Feedback</h3>
+                    <p class="text-gray-400 mb-8">Have a suggestion or want to share your experience? Your feedback is private and helps us improve.</p>
+                    <div class="glass-card rounded-2xl p-6 text-left">
+                        <form id="feedback-form" action="https://formspree.io/f/xqadjozw" method="POST" class="space-y-4">
+                            <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300">Name*</label>
+                            <input type="text" name="name" id="name" placeholder="ENTER YOUR NAME HERE"
+                                    class="mt-1 block w-full bg-white/5 border border-white/10 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                                    required>
+                            </div>
+
+                            <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300">Email*</label>
+                            <input type="email" name="email" id="email" placeholder="ENTER YOUR EMAIL HERE"
+                                    class="mt-1 block w-full bg-white/5 border border-white/10 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                                    required>
+                            </div>
+
+                            <div>
+                                <label for="feedback" class="block text-sm font-medium text-gray-300">Feedback</label>
+                                <textarea id="feedback" name="feedback" rows="4" required class="mt-1 block w-full bg-white/5 border border-white/10 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"  placeholder="WRITE YOUR VALUABLE  FEEDBACK AND REVIEWS HERE"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 focus:ring-offset-gray-900">
+                                    Submit Feedback
+                                </button>
+                            </div>
+                        </form>
+                         <p id="form-status" class="mt-4 text-center"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Take Action Section -->
+        <section id="action" class="py-20 md:py-32 fade-in-section">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Become Part of the Solution</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mb-8">
+                    The challenge is immense, but so is our collective power. Start today. Make conscious choices, spread the word, and become a part of the solution for a water-secure India.
+                </p>
+                <div class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
+                     <i data-lucide="droplets" class="w-5 h-5"></i>
+                    <a href="https://jalshakti-dowr.gov.in/" target="_blank" rel="noopener noreferrer">
+                        Visit the Jal Shakti Ministry
+                    </a>
+                </div> 
+                <br> 
+                <br>
+                <div class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
+                     <i data-lucide="droplets" class="w-5 h-5"></i>
+                     <a href="https://www.un.org/en/global-issues/water" target="_blank" rel="noopener noreferrer">
+                        Visit the UN Water Scarcity    
+                    </a>
+                </div> 
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-black/50">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2025 अमृतdhara  India. A Water Conservation Initiative.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+            const headlineWords = document.querySelectorAll('#hero-headline span');
+            const subheadline = document.getElementById('hero-subheadline');
+            const ctaButton = document.getElementById('magnetic-button-container');
+            const chatbotButton = document.getElementById('chatbot-button-container');
+            const quoteContainer = document.getElementById('daily-quote-container');
+
+            let animationDelay = 100;
+
+            headlineWords.forEach((word, index) => {
+                setTimeout(() => {
+                    word.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    word.style.opacity = '1';
+                    word.style.transform = 'translateY(0)';
+                }, animationDelay + index * 150);
+            });
+            animationDelay += headlineWords.length * 150;
+
+            setTimeout(() => {
+                subheadline.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                subheadline.style.opacity = '1';
+                subheadline.style.transform = 'translateY(0)';
+            }, animationDelay);
+            animationDelay += 100;
+            
+            // --- ✨ MODIFIED: Automatic Quote Changer (Local) ---
+            const quotes = [
+                { "quote": "Thousands have lived without love, not one without water.", "author": "W. H. Auden" },
+                { "quote": "Water is the driving force of all nature.", "author": "Leonardo da Vinci" },
+                { "quote": "When the well is dry, we know the worth of water.", "author": "Benjamin Franklin" },
+                { "quote": "Water, water, everywhere, nor any drop to drink.", "author": "Samuel Taylor Coleridge" },
+                { "quote": "A river is more than an amenity, it is a treasure.", "author": "Oliver Wendell Holmes" },
+                { "quote": "We forget that the water cycle and the life cycle are one.", "author": "Jacques Yves Cousteau" },
+                { "quote": "If there is magic on this planet, it is contained in water.", "author": "Loren Eiseley" },
+                { "quote": "Don't let the water run in the sink, our life's on the brink.", "author": "Unknown" },
+                { "quote": "Water is life, and clean water means health.", "author": "Audrey Hepburn" },
+                { "quote": "The earth, the land, the water are not an inheritance from our forefathers but on loan from our children.", "author": "Indian Proverb" },
+                { "quote": "A drop of water is worth more than a sack of gold to a thirsty man.", "author": "Unknown" },
+                { "quote": "Conserve water, conserve life.", "author": "Unknown" },
+                { "quote": "Pure water is the world's first and foremost medicine.", "author": "Slovakian Proverb" },
+            ];
+            
+            let currentQuoteIndex = -1;
+
+            function displayNewQuote() {
+                // Fade out the old quote smoothly
+                quoteContainer.style.opacity = '0';
+
+                // Wait for the fade-out to complete before updating content
+                setTimeout(() => {
+                    // Select a new, different quote
+                    let newIndex;
+                    do {
+                        newIndex = Math.floor(Math.random() * quotes.length);
+                    } while (newIndex === currentQuoteIndex);
+                    currentQuoteIndex = newIndex;
+                    
+                    const newQuote = quotes[currentQuoteIndex];
+
+                    quoteContainer.innerHTML = `
+                        <div class="glass-card inline-block px-4 py-2 rounded-lg border border-white/10">
+                            <p class="text-base md:text-lg text-gray-200 italic">
+                                <i data-lucide="quote" class="inline-block w-4 h-4 -mt-1 mr-1"></i>
+                                ${newQuote.quote}
+                                <span class="font-medium not-italic text-gray-300"> – ${newQuote.author}</span>
+                            </p>
+                        </div>
+                    `;
+                    lucide.createIcons(); // Re-render the new quote icon
+                    // Fade in the new quote
+                    quoteContainer.style.opacity = '1';
+                }, 500); // This delay should match the CSS transition duration
+            }
+            
+            // This logic controls the timing of the first quote and subsequent animations
+            setTimeout(() => {
+                // Display the first quote immediately
+                displayNewQuote();
+                
+                // Then set an interval to display a new quote every 10 seconds
+                setInterval(displayNewQuote, 10000);
+
+            }, animationDelay);
+            animationDelay += 500; 
+            
+            // Animate CTA Buttons after the quote appears
+            setTimeout(() => {
+                ctaButton.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                ctaButton.style.opacity = '1';
+                ctaButton.style.transform = 'translateY(0)';
+            }, animationDelay);
+            
+            setTimeout(() => {
+                chatbotButton.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                chatbotButton.style.opacity = '1';
+                chatbotButton.style.transform = 'translateY(0)';
+            }, animationDelay + 150);
+
+
+            const dropletContainer = document.getElementById('droplet-container');
+            for(let i=0; i<15; i++) {
+                const droplet = document.createElement('div');
+                droplet.classList.add('droplet');
+                const size = Math.random() * 20 + 5;
+                droplet.style.width = `${size}px`;
+                droplet.style.height = `${size}px`;
+                droplet.style.left = `${Math.random() * 100}%`;
+                droplet.style.animationDuration = `${Math.random() * 5 + 5}s`;
+                droplet.style.animationDelay = `${Math.random() * 5}s`;
+                dropletContainer.appendChild(droplet);
+            }
+
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        if(entry.target.id === 'crisis') {
+                            const factTags = document.querySelectorAll('.fact-tag');
+                            factTags.forEach((tag, index) => {
+                                setTimeout(() => {
+                                    tag.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                                    tag.style.opacity = '1';
+                                    tag.style.transform = 'translateY(0)';
+                                }, index * 100);
+                            });
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => { observer.observe(section); });
+
+            // --- Gemini API Integration for AI Tips ---
+            const generateBtn = document.getElementById('generate-tips-btn');
+            const promptInput = document.getElementById('ai-prompt-input');
+            const resultsContainer = document.getElementById('ai-results-container');
+
+            generateBtn.addEventListener('click', async () => {
+                const userPrompt = promptInput.value.trim();
+                if (!userPrompt) {
+                    resultsContainer.innerHTML = '<p class="text-red-400 text-center">Please enter a request to get tips.</p>';
+                    return;
+                }
+                resultsContainer.innerHTML = `<div class="flex justify-center items-center gap-3 text-gray-300"><div class="w-5 h-5 border-2 border-dashed rounded-full animate-spin border-blue-400"></div><span>Generating your custom plan...</span></div>`;
+                const apiKey = "AIzaSyD2R1rNIbkAplXBUuLc8SnimbQkShPGlE4";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=AIzaSyD2R1rNIbkAplXBUuLc8SnimbQkShPGlE4`;
+                const systemPrompt = "You are a friendly and helpful water conservation expert. A user wants water-saving tips based on their specific request. Provide a concise, actionable, and easy-to-understand list of 3-5 tips. Format your response as simple HTML list items ONLY (e.g., <li>Tip one.</li><li>Tip two.</li>). Do not include the surrounding <ul> or <ol> tags. Do not use markdown.";
+                const fullUserQuery = `${systemPrompt}\n\nUser request: "${userPrompt}"`;
+                const payload = { contents: [{ parts: [{ text: fullUserQuery }] }], };
+
+                try {
+                    const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                    if (!response.ok) { throw new Error(`API request failed with status ${response.status}`); }
+                    const result = await response.json();
+                    const candidate = result.candidates?.[0];
+                    if (candidate && candidate.content?.parts?.[0]?.text) {
+                        const generatedHtml = candidate.content.parts[0].text;
+                        resultsContainer.innerHTML = `<div class="glass-card rounded-lg p-6 text-left" style="opacity: 0; transform: scale(0.95); transition: opacity 0.4s ease, transform 0.4s ease;"><h4 class="font-bold text-lg mb-4 text-white">Here's Your Custom Plan:</h4><ul class="list-disc list-inside space-y-2 text-gray-300">${generatedHtml}</ul></div>`;
+                        setTimeout(() => { const resultCard = resultsContainer.querySelector('.glass-card'); resultCard.style.opacity = '1'; resultCard.style.transform = 'scale(1)'; }, 50);
+                    } else { throw new Error("Received an empty or invalid response from the API."); }
+                } catch (error) {
+                    console.error("Gemini API Error:", error);
+                    resultsContainer.innerHTML = '<p class="text-red-400 text-center">Sorry, something went wrong. Please try again later.</p>';
+                }
+            });
+            promptInput.addEventListener('keyup', (event) => { if (event.key === 'Enter') { event.preventDefault(); generateBtn.click(); } });
+
+            // --- Gemini API Integration for Myth Buster ---
+            const bustMythBtn = document.getElementById('bust-myth-btn');
+            const mythPromptInput = document.getElementById('myth-prompt-input');
+            const mythResultsContainer = document.getElementById('myth-results-container');
+
+            bustMythBtn.addEventListener('click', async () => {
+                const userPrompt = mythPromptInput.value.trim();
+                if (!userPrompt) {
+                    mythResultsContainer.innerHTML = '<p class="text-red-400 text-center">Please enter a statement to verify.</p>';
+                    return;
+                }
+                mythResultsContainer.innerHTML = `<div class="flex justify-center items-center gap-3 text-gray-300"><div class="w-5 h-5 border-2 border-dashed rounded-full animate-spin border-indigo-400"></div><span>Verifying with our expert...</span></div>`;
+                
+                const apiKey = "AIzaSyD2R1rNIbkAplXBUuLc8SnimbQkShPGlE4";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=AIzaSyD2R1rNIbkAplXBUuLc8SnimbQkShPGlE4`;
+                const systemPrompt = "You are a water conservation expert. Analyze the user's statement. Your entire response must start with either '### FACT' or '### MYTH', followed by a colon and a single, concise sentence explaining why. For example: '### FACT: A five-minute shower uses less water than a full bath.' or '### MYTH: It's best to water your lawn at noon.' Do not add any other text or formatting.";
+                const fullUserQuery = `${systemPrompt}\n\nUser statement: "${userPrompt}"`;
+                const payload = { contents: [{ parts: [{ text: fullUserQuery }] }], };
+
+                try {
+                    const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                    if (!response.ok) { throw new Error(`API request failed with status ${response.status}`); }
+                    const result = await response.json();
+                    const candidate = result.candidates?.[0];
+                    if (candidate && candidate.content?.parts?.[0]?.text) {
+                        let text = candidate.content.parts[0].text;
+                        let resultHtml = '';
+                        if(text.startsWith('### FACT')) {
+                            const explanation = text.substring(text.indexOf(':') + 1).trim();
+                            resultHtml = `<div class="glass-card rounded-lg p-6 text-left border-l-4 border-green-400" style="opacity: 0; transform: scale(0.95); transition: all 0.4s ease;"><h4 class="font-bold text-xl mb-2 text-green-400 flex items-center gap-2"><i data-lucide="check-circle"></i> FACT</h4><p class="text-gray-300">${explanation}</p></div>`;
+                        } else if (text.startsWith('### MYTH')) {
+                            const explanation = text.substring(text.indexOf(':') + 1).trim();
+                            resultHtml = `<div class="glass-card rounded-lg p-6 text-left border-l-4 border-red-400" style="opacity: 0; transform: scale(0.95); transition: all 0.4s ease;"><h4 class="font-bold text-xl mb-2 text-red-400 flex items-center gap-2"><i data-lucide="x-circle"></i> MYTH</h4><p class="text-gray-300">${explanation}</p></div>`;
+                        } else {
+                            resultHtml = `<div class="glass-card rounded-lg p-6 text-left"><p class="text-gray-300">${text}</p></div>`; // Fallback
+                        }
+                        
+                        mythResultsContainer.innerHTML = resultHtml;
+                        lucide.createIcons(); // Re-render icons for the new elements
+                        setTimeout(() => { const resultCard = mythResultsContainer.querySelector('.glass-card'); resultCard.style.opacity = '1'; resultCard.style.transform = 'scale(1)'; }, 50);
+
+                    } else { throw new Error("Received an empty or invalid response from the API."); }
+                } catch (error) {
+                    console.error("Gemini API Error:", error);
+                    mythResultsContainer.innerHTML = '<p class="text-red-400 text-center">Sorry, something went wrong. Please try again later.</p>';
+                }
+            });
+            mythPromptInput.addEventListener('keyup', (event) => { if (event.key === 'Enter') { event.preventDefault(); bustMythBtn.click(); } });
+        
+            // --- Formspree Logic for Private Feedback Form ---
+            const feedbackForm = document.getElementById('feedback-form');
+            const formStatus = document.getElementById('form-status');
+            
+            feedbackForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const form = e.target;
+                const data = new FormData(form);
+                
+                formStatus.innerHTML = `<span class="text-yellow-400">Sending...</span>`;
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: form.method,
+                        body: data,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        formStatus.innerHTML = `<span class="text-green-400">Thank you for your feedback!</span>`;
+                        form.reset();
+                    } else {
+                        const responseData = await response.json();
+                        if (Object.hasOwn(responseData, 'errors')) {
+                           formStatus.innerHTML = `<span class="text-red-400">${responseData["errors"].map(error => error["message"]).join(", ")}</span>`
+                        } else {
+                           formStatus.innerHTML = `<span class="text-red-400">Oops! There was a problem submitting your form.</span>`
+                        }
+                    }
+                } catch (error) {
+                    formStatus.innerHTML = `<span class="text-red-400">Oops! There was a problem submitting your form.</span>`;
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
+
