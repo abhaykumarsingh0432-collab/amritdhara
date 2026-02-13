@@ -7,3 +7,4 @@ The idea behind this project was to use Artificial Intelligence for social good-
 This project strengthened my understanding of Al concepts, problem-solving, and building technology with real-world impact.
 
 I'm open to feedback and learning opportunities.
+Amritdhara URL https://abhaykumarsingh0432-collab.github.io/amritdhara/
